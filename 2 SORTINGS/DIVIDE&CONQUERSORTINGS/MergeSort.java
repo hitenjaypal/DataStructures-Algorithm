@@ -2,19 +2,10 @@
 
 public class MergeSort {
 
-    // Created a void function for printing the array elements.
-    public static void printarr(int[] arr) {
-        for (int i = 0; i < arr.length; i++){
-            System.out.print(arr[i] + "");
-
-        }
-        System.out.println();
-    }
-
     // We'll Create a Recursive Fn
-    public static void mergesort (int arr[],int si , int ei){
+    public static void mergesort (int arr[],int si , int ei){  // you can use these parameters by passing in fn without initialized them in main fn to Perform the Sorting Task.
         // base case 
-        if (si>=ei){ // agar si>ei then niche jakr mid krega then element sorted ho jb tk chlega 
+        if (si>=ei){ // agar si>ei then niche jakr mid krega then element sorted ho jb tk chlega //  it means that the segment being considered is either empty (when si equals ei) or invalid (when si is greater than ei)
             return;
         }
         // Find Mid of elements 
@@ -32,7 +23,7 @@ public class MergeSort {
     // Created a Function for sorted the individual elements 
     // By storing them in temp array then at last 
     // Temp = arr[i] (temp ko arr mai store krdenege)
-    public static void merge(int arr[], int si , int mid, int ei){
+    public static void merge(int arr[], int si , int mid, int ei){ // mid jyga smja 
 
 
         //left(0,3)=4 right(4,6)=3 -> 6-0 = 6 answer dega pr apna 7 aata hai because of oth Indexing therefore we add 1
@@ -43,7 +34,7 @@ public class MergeSort {
 
 
         //Logic of this loop
-        // Agar left part wala element chota hai toh usse temp mai stpre krdo nai toh right wala chota hai toh usse temp mai store krdo 
+        // Agar left part wala element chota hai toh usse temp mai store krdo nai toh right wala chota hai toh usse temp mai store krdo 
         while(i<=mid && j<=ei) { // Above Variables Dhek bhai 
             if(arr[i] <= arr[j]){
                 temp[k] = arr[i];
@@ -57,7 +48,7 @@ public class MergeSort {
     }
     
 
-    // Bche hue elements ke liye LOGIC
+    // Bche hue elements ke liye LOGIC // manlo while mai ek condition puri hogyi but ek baki hai uskeliye 
     // Left Part
     while (i<=mid){ 
         temp[k++] = arr[i++]; // kn kiya bs upr ki conditions ko combine krke ek mai likhdiya  // [k++] -> K ki current value ko lelega and usse increment kdega 
@@ -77,10 +68,14 @@ public class MergeSort {
 
     }
 
+    // Created a void function for printing the array elements.
+    public static void printarr(int[] arr) {
+        for (int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + "");
 
-
-
-
+        }
+        System.out.println();
+    }
 
      
     public static void main(String[] args) {
@@ -89,8 +84,10 @@ public class MergeSort {
         printarr(arr);
 
     }
-    
 }
+
+
+//The Time Complexity of this Sorting Algo is O(logn)
 
 
 
